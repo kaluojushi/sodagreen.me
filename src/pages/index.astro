@@ -51,11 +51,12 @@ const defaultT = translations['zh-Hant'];
         </div>
         <p class="mt-[14vh] max-w-2xl font-['LXGW_WenKai'] text-2xl leading-relaxed text-gray-600 italic md:mt-12 md:max-w-5xl md:text-5xl md:leading-relaxed dark:text-white/80" id="lyric"></p>
       </div>
+      <a id="ar-wqf" rel="ar" href="/usdz/wqf.usdz" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);"><img src="" alt=""></a>
       <div class="relative z-10 grid w-[92%] grid-cols-3 justify-items-center gap-2 px-4 pb-12 md:mx-auto md:flex md:w-[78%] md:justify-center md:gap-4 md:px-0 md:pb-12">
-        {stickers.map((s) => (
-          <span class="contents">
-            <img src={s.light.src} alt="" class="h-28 w-auto md:h-36 dark:hidden" loading="lazy" />
-            <img src={s.dark.src} alt="" class="hidden h-28 w-auto md:h-36 dark:block" loading="lazy" />
+        {stickers.map((s, i) => (
+          <span class="contents" {...(i === 1 ? { 'data-sticker': 'wqf' } : {})}>
+            <img src={s.light.src} alt="" class={`h-28 w-auto md:h-36 dark:hidden${i === 1 ? ' cursor-pointer' : ''}`} loading="lazy" />
+            <img src={s.dark.src} alt="" class={`hidden h-28 w-auto md:h-36 dark:block${i === 1 ? ' cursor-pointer' : ''}`} loading="lazy" />
           </span>
         ))}
       </div>
@@ -365,6 +366,15 @@ const defaultT = translations['zh-Hant'];
     if (e.target === infoDialog) {
       infoDialog.classList.remove('opacity-100', 'pointer-events-auto');
       infoDialog.classList.add('opacity-0', 'pointer-events-none');
+    }
+  });
+
+  document.querySelector('[data-sticker="wqf"]')?.addEventListener('click', () => {
+    const ua = navigator.userAgent;
+    const isSafari = /Safari/.test(ua) && !/Chrome|CriOS|Fxios/.test(ua);
+    const isIOS = /iPhone|iPad|iPod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+    if (isSafari && isIOS) {
+      document.getElementById('ar-wqf')?.click();
     }
   });
 
