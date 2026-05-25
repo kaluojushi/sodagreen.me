@@ -1,4 +1,4 @@
-export type ProjectKey = 'sodaguide' | '2024-report' | 'soda-yinpa' | 'soda-life' | 'soda-lyrics';
+export type ProjectKey = 'sodaguide' | '2024-report' | 'soda-yinpa' | 'soda-play' | 'soda-life' | 'soda-lyrics';
 export type CategoryKey = 'resource' | 'interactive' | 'media';
 export type Locale = 'zh-Hant' | 'zh-CN';
 
@@ -29,6 +29,12 @@ export const projects: Project[] = [
     icon: '/images/podcast-icon.png',
     url: 'https://space.bilibili.com/1536096/lists/3247433',
     category: 'media',
+  },
+  {
+    key: 'soda-play',
+    icon: 'https://play.sodagreen.me/avatar.png',
+    url: 'https://play.sodagreen.me',
+    category: 'interactive',
   },
   {
     key: 'soda-life',

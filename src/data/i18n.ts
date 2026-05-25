@@ -53,6 +53,11 @@ export const translations: Record<Locale, {
         description: '和我們一起聊聊蘇打綠的音樂故事',
         urlDisplay: '進入 Bilibili 合集',
       },
+      'soda-play': {
+        title: 'SodaPlay',
+        description: '屬於打粉的專屬遊樂場',
+        urlDisplay: 'play.sodagreen.me',
+      },
       'soda-life': {
         title: '蘇打人生',
         description: '敬請期待',
@@ -118,6 +123,11 @@ export const translations: Record<Locale, {
         title: '苏打音趴 Soda Yinpa',
         description: '和我们一起聊聊苏打绿的音乐故事',
         urlDisplay: '进入 Bilibili 合集',
+      },
+      'soda-play': {
+        title: 'SodaPlay',
+        description: '属于打粉的专属游乐场',
+        urlDisplay: 'play.sodagreen.me',
       },
       'soda-life': {
         title: '苏打人生',
